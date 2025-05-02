@@ -12,7 +12,7 @@ const UserState = (props) => {
     const host = 'http://65.2.78.31:3000';
 
     const loginUser = async (credentials) => {
-        const response = await fetch(`${host}api/v1/users/login`, {
+        const response = await fetch(`${host}/api/v1/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const UserState = (props) => {
     }
 
     const registerUser = async (credentials) => {
-        const response = await fetch(`${host}api/v1/users/register`, {
+        const response = await fetch(`${host}/api/v1/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ const UserState = (props) => {
     }
 
     const userDetail = async () => {
-        const response = await fetch(`${host}api/v1/users/getUserDetail`, {
+        const response = await fetch(`${host}/api/v1/users/getUserDetail`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ const UserState = (props) => {
         // formData.append(data)
         console.log(id)
 
-        const response = await fetch(`${host}api/v1/users/updateAvatar`, {
+        const response = await fetch(`${host}/api/v1/users/updateAvatar`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
@@ -129,7 +129,7 @@ const UserState = (props) => {
 
     const checkRefreshToken =  async ()=>{
         try {
-            const response = await fetch(`${host}api/v1/users/refreshToken`, {
+            const response = await fetch(`${host}/api/v1/users/refreshToken`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -180,7 +180,7 @@ const UserState = (props) => {
       
         try {
           // Call the backend /logout route
-          const response = await fetch(`${host}api/v1/users/logout`, {
+          const response = await fetch(`${host}/api/v1/users/logout`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
