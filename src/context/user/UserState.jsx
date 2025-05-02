@@ -9,7 +9,7 @@ const UserState = (props) => {
 
     const [id, setId] = useState("");
     const [socket, setSocket] = useState(null); 
-    const host = "http://localhost:3000/"
+    const host = 'http://65.2.78.31:3000';
 
     const loginUser = async (credentials) => {
         const response = await fetch(`${host}api/v1/users/login`, {

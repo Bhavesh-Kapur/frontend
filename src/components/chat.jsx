@@ -14,8 +14,9 @@ const Chat = () => {
         return;
       }
 
+      const host = 'http://65.2.78.31:3000';
       try {
-        const response = await fetch('http://localhost:3000/api/v1/users/getUsers', {
+        const response = await fetch(`${host}/api/v1/users/getUsers`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${accessToken}`

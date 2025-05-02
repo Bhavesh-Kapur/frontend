@@ -7,7 +7,7 @@ const ClassesState = ({ children }) => {
   const [error, setError] = useState(null);
 
 
-  const host = "http://localhost:3000";
+  const host = 'http://65.2.78.31:3000';
 
   const token = localStorage.getItem("accessToken");
   // Fetch all classes for an organization

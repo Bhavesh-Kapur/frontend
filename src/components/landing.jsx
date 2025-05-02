@@ -29,7 +29,7 @@ function Landing() {
             </p>
             <div className="flex gap-4">
 
-              <a href={`http://localhost:5173/room?room=${Math.floor(10000 + Math.random() * 90000)}`} target='_blank'>
+              <a href={`http://13.232.186.162:5173/room?room=${Math.floor(10000 + Math.random() * 90000)}`} target='_blank'>
                 <button className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition flex items-center gap-2">
                   Get Started Instant Meeting <ArrowRight size={20} />
                 </button>

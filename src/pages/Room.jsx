@@ -82,8 +82,8 @@ const Room = () => {
     try {
       const accessToken = localStorage.getItem("accessToken");
       console.log("Fetching details for user IDs:", userIds);
-
-      const response = await fetch(`http://localhost:3000/api/v1/users/getMultipleUsers`, {
+      const host = 'http://65.2.78.31:3000';
+      const response = await fetch(`${host}/api/v1/users/getMultipleUsers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

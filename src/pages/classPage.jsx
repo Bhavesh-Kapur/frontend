@@ -30,12 +30,11 @@ const ClassPage = () => {
   const handleGoBack = () => {
     navigate(-1);
   };
-
+  const host = 'http://65.2.78.31:3000';
   useEffect(() => {
-    const socket = io("http://localhost:3000", {
+    const socket = io(`${host}`, {
       withCredentials: true,
     });
-
     socketRef.current = socket;
 
     socket.on("connect", () => {
@@ -57,7 +56,7 @@ const ClassPage = () => {
   // Fetch members and class data
   const fetchClassData = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/users/classes/${classId}/members`, {
+      const res = await axios.get(`${host}/api/v1/users/classes/${classId}/members`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
@@ -83,7 +82,7 @@ const ClassPage = () => {
   // Fetch existing messages
   const getMessages = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/messages/${classId}`, {
+      const res = await fetch(`${host}/api/v1/messages/${classId}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -116,7 +115,7 @@ const ClassPage = () => {
       };
 
       // Send HTTP POST request to save message
-      const res = await fetch(`http://localhost:3000/api/v1/messages/${classId}/send`, {
+      const res = await fetch(`${host}/api/v1/messages/${classId}/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
